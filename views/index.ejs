@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<script src="https://taxi.house/jquery331.js"></script>
+		<title>Drag And Drop</title>
+		<style>
+			body
+			{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#dropzone
+			{
+				width: 500px;
+				/* background-color: #EFEFEF; */
+				height: 300px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font: 200% Bahnschrift;
+				border: 1px dashed #999;
+				flex-direction: column;
+			}
+			#dropzone span
+			{
+				margin-top: 3px;
+				font-size: 60%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dropzone">
+			Drop Files Here
+			<span>(50 MB Limit)</span>
+		</div>
+	</body>
+	<script>
+		let dropZone = document.getElementById("dropzone");
+
+		dropZone.addEventListener("dragover", function(e)
+		{
+			e.stopPropagation();
+			e.preventDefault();
+			console.log("hello");
+		});
+
+		// Get file data on drop
+		dropZone.addEventListener("drop", function(e)
+		{
+			e.stopPropagation();
+			e.preventDefault();
+
+			let files = e.dataTransfer.files;
+
+			for(let i = 0; i < files.length; i++)
+			{
+				console.log(files[i]);
+
+				var reader = new FileReader();
+
+				reader.onload = function(o)
+				{
+					console.log(o.target.result);
+					let sender =
+					{
+						name: files[i].name,
+						date: files[i].lastModified,
+						data: o.target.result
+					};
+					console.log(sender);
+					$.ajax({ method: "POST", url: "send", data: { f: sender }}).done((dat, err) =>
+					{
+						console.log(dat);
+					});
+				}
+				reader.readAsDataURL(files[i]);
+			}
+		});
+	</script>
+</html>

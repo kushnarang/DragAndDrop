@@ -1,0 +1,21 @@
+{
+	"name": "draganddrop",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"author": "Kush Narang",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"data-uri-to-buffer": "^2.0.0",
+		"datauri": "^1.1.0",
+		"ejs": "^2.6.1",
+		"express": "^4.16.3",
+		"uniqid": "^5.0.3",
+		"uuid": "^3.3.2"
+	}
+}
