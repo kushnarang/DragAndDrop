@@ -36,7 +36,7 @@
 		</style>
 	</head>
 	<body>
-
+		
 	</body>
 	<script>
 		$(document).ready(() =>
@@ -46,13 +46,16 @@
 				console.log(dat);
 				dat.forEach(el =>
 				{
-					let split = el.split("\\");
+					let split = el.split(/[\\\/]/);
+					console.log(split);
+					console.log(split.indexOf("views"));
+					console.log(split.slice(split.indexOf("files"),split.length).join("/"));
 					let splitEnd = split[split.length - 1];
 					console.log(splitEnd);
 					$("body").append(`
 						<div class="list">
 							${splitEnd}
-							<a download="${splitEnd}" href="/files/${split[split.length - 2]}"><i class="material-icons">save</i></a>
+							<a download="${splitEnd}" href="${split.slice(split.indexOf("files"),split.length -1).join("/")}"><i class="material-icons">save</i></a>
 						</div>
 					`);
 				});

@@ -36,11 +36,10 @@ class Upload
 app.get("/files/*", (req, res) =>
 {
 	let path = home + "\/views" + req.originalUrl;
-	// console.log(path);
+	console.log(path);
 	// res.send("files\12869a40-8153-11e8-b748-87827fa354e1");
 	fs.readdirSync(path).forEach(file =>
 	{
-		console.log(path + "\/" + file);
 		res.sendFile(path + "\/" + file);
 	});
 	// res.sendFile();
