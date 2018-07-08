@@ -3,13 +3,21 @@ A file uploader and downloader client in Node.js
 
 
 ## To Install
-Ensure you have Node.js and npm installed. Clone this repo and open file location in terminal.
+Ensure you have Node.js and npm installed. Open a terminal.
 
-Run the command:
+Clone the code:
+```
+# git clone https://github.com/kushnarang/DragAndDrop.git
+```
+Enter the cloned folder:
+```
+# cd DragAndDrop
+```
+Install the packages:
 ```
 # npm install
 ```
-Then:
+Then, finally, start the app:
 ```
 # npm start
 ```
@@ -21,5 +29,5 @@ Then:
 Connect to *localhost:3000/list*. If you have uploaded at least one file, you will see it with its name and an option to download it. 
 
 
-#### Note
-Any errors will appear in the terminal or console. If errors don't resolve themselves, feel free to leave a comment or create a pull request
+#### Note:
+Any errors will appear in the terminal or console. If errors don't resolve themselves, feel free to leave a comment or create a pull request.
