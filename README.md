@@ -29,5 +29,10 @@ Then:
 Connect to *localhost:3000/list*. If you have uploaded at least one file, you will see it with its name and an option to download it. 
 
 
-#### Note:
+## Also
+### Errors
 Any errors will appear in the terminal or console. If errors don't resolve themselves, feel free to leave a comment or create a pull request.
+
+### Support (tested on)
+* Windows 10
+* CentOS 7
