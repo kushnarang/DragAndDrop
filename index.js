@@ -35,13 +35,13 @@ class Upload
 
 app.get("/files/*", (req, res) =>
 {
-	let path = home + "\\views" + req.originalUrl;
+	let path = home + "\/views" + req.originalUrl;
 	// console.log(path);
 	// res.send("files\12869a40-8153-11e8-b748-87827fa354e1");
 	fs.readdirSync(path).forEach(file =>
 	{
-		console.log(path + "\\" + file);
-		res.sendFile(path + "\\" + file);
+		console.log(path + "\/" + file);
+		res.sendFile(path + "\/" + file);
 	});
 	// res.sendFile();
 });
@@ -55,17 +55,17 @@ app.get("/list", (req, res) =>
 });
 app.post("/get", (req, res) =>
 {
-	let path = home + "\\views\\files";
+	let path = home + "\/views\/files";
 	let end = [];
 	console.log("hey");
 
 	fs.readdirSync(path).forEach(fold =>
 	{
-		fs.readdirSync(path + "\\" + fold).forEach(file =>
+		fs.readdirSync(path + "\/" + fold).forEach(file =>
 		{
-			console.log(path + "\\" + fold + "\\" + file);
-			// res.sendFile(path + "\\" + file);
-			end.push(path + "\\" + fold + "\\" + file);
+			console.log(path + "\/" + fold + "\/" + file);
+			// res.sendFile(path + "\/" + file);
+			end.push(path + "\/" + fold + "\/" + file);
 		});
 	});
 	console.log(end);
